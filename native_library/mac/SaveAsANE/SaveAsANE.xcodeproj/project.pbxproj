@@ -18,13 +18,13 @@
 
 /* Begin PBXFileReference section */
 		CE0F150F1DC625060054AE12 /* SaveAsANE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SaveAsANE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE0F15121DC625060054AE12 /* SaveAsANE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaveAsANE.h; sourceTree = "<group>"; };
+		CE0F15121DC625060054AE12 /* SaveAsANE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SaveAsANE.h; path = ../../../include/SaveAsANE.h; sourceTree = "<group>"; };
 		CE0F15131DC625060054AE12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE0F151A1DC625290054AE12 /* Adobe AIR_64 */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "Adobe AIR_64"; path = "../../../../../../../Applications/Adobe Flash Builder 4.7/sdks/4.6.0/runtimes/air/mac/Adobe AIR.framework/Versions/1.0/Adobe AIR_64"; sourceTree = "<group>"; };
 		CE0F151B1DC625290054AE12 /* Adobe AIR */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "Adobe AIR"; path = "../../../../../../../Applications/Adobe Flash Builder 4.7/sdks/4.6.0/runtimes/air/mac/Adobe AIR.framework/Versions/1.0/Adobe AIR"; sourceTree = "<group>"; };
 		CE0F151F1DC625650054AE12 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CE0F15211DC625FA0054AE12 /* SaveAsANE_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaveAsANE_Prefix.pch; sourceTree = "<group>"; };
-		CE0F15221DC626810054AE12 /* SaveAsANE.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SaveAsANE.cpp; sourceTree = "<group>"; usesTabs = 1; };
+		CE0F15221DC626810054AE12 /* SaveAsANE.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SaveAsANE.cpp; path = ../../../source/SaveAsANE.cpp; sourceTree = "<group>"; usesTabs = 1; };
 		CE0F15241DC6297F0054AE12 /* ANEhelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ANEhelper.cpp; path = ../../../source/ANEhelper.cpp; sourceTree = "<group>"; };
 		CE0F15251DC6297F0054AE12 /* ANEhelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANEhelper.h; path = ../../../include/ANEhelper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,7 +172,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = ../../../native_extension/ane/build_osx.sh;
+			shellScript = ../../../native_extension/ane/build_multi.sh;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -385,6 +385,7 @@
 				CE0F15191DC625060054AE12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
