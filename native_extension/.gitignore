@@ -1,0 +1,14 @@
+# Created by https://www.gitignore.io/api/flashbuilder
+
+### FlashBuilder ###
+# Build and Release Folders
+bin-debug/
+bin-release/
+ane/platforms/mac
+
+# Other files and folders
+.settings/
+
+.FlexUnitSettings
+.externalToolBuilders
+.model

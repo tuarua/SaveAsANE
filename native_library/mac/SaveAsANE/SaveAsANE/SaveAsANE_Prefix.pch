@@ -1,0 +1,14 @@
+//
+//  SaveAsANE_Prefix.pch
+//  SaveAsANE
+//
+//  Created by User on 30/10/2016.
+//  Copyright © 2016 Tua Rua Ltd. All rights reserved.
+//
+
+#ifdef __OBJC__
+#define __ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORES 0
+#define BOOST_ASIO_SEPARATE_COMPILATION 0
+#import <Cocoa/Cocoa.h>
+#endif
+
