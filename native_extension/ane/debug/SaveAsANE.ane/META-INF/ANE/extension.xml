@@ -5,12 +5,12 @@
     <copyright>This work is licensed under The MIT License (MIT), Copyright 2016 Tua Rua Ltd.</copyright>
     <versionNumber>0.0.1</versionNumber>
 	<platforms>
-	<platform name="MacOS-x86-64">
-        <applicationDeployment>
-            <nativeLibrary>SaveAsANE.framework</nativeLibrary>
-            <initializer>TRSAAExtInizer</initializer>
-            <finalizer>TRSAAExtFinizer</finalizer>
-        </applicationDeployment>
-	</platform>
+        <platform name="Windows-x86">
+            <applicationDeployment>
+                <nativeLibrary>SaveAsANE.dll</nativeLibrary>
+                <initializer>TRSAAExtInizer</initializer>
+                <finalizer>TRSAAExtFinizer</finalizer>
+            </applicationDeployment>
+        </platform>
 	</platforms>
 </extension>

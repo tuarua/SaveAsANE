@@ -1,5 +1,3 @@
-//TODO convert to static class
-
 #ifdef _WIN32
 #include "FlashRuntimeExtensions.h"
 #include <windows.h>
