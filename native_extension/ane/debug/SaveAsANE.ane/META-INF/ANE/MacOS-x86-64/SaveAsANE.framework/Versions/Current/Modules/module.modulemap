@@ -1,6 +1,0 @@
-framework module SaveAsANE {
-  umbrella header "SaveAsANE.h"
-
-  export *
-  module * { export * }
-}

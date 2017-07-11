@@ -10,8 +10,6 @@
 #include <sstream>
 
 #ifdef _WIN32
-#include <windows.h>
-#include <conio.h>
 #else
 #include <stdlib.h>
 #include <stdio.h>
@@ -20,10 +18,7 @@
 
 #include "nfd.h"
 
-#include "ANEhelper.h"
-
 #ifdef _WIN32
-#include "FlashRuntimeExtensions.h"
 bool isSupportedInOS = true;
 std::string pathSlash = "\\";
 #else
@@ -32,28 +27,29 @@ bool isSupportedInOS = true;
 std::string pathSlash = "/";
 #endif
 
+#include <ANEhelper.h>
+ANEHelper aneHelper = ANEHelper();
 
 extern "C" {
     FREContext dllContext;
 	
-	
 	FREObject saveAs(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
-		nfdchar_t *outPath = NULL;
-		nfdresult_t result = NFD_SaveDialog(getStringFromFREObject(argv[0]).c_str(), getStringFromFREObject(argv[1]).c_str(), &outPath);
+		nfdchar_t *outPath = nullptr;
+
+		auto result = NFD_SaveDialog(aneHelper.getString(argv[0]).c_str(), aneHelper.getString(argv[1]).c_str(), &outPath);
 		if (result == NFD_OKAY) {
-		}
-		else if (result == NFD_CANCEL) {
+		} else if (result == NFD_CANCEL) {
+			outPath = "";
+		} else {
 			outPath = "";
 		}
-		else {
-			outPath = "";
-		}
-		return getFREObjectFromString(outPath);
+		
+		return aneHelper.getFREObject(outPath);
 	}
 	
 	void contextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToSet, const FRENamedFunction** functionsToSet) {
 		static FRENamedFunction extensionFunctions[] = {
-			{ (const uint8_t*) "saveAs",NULL, &saveAs }
+			{ reinterpret_cast<const uint8_t*>("saveAs"),nullptr, &saveAs }
 		};
 		
 		*numFunctionsToSet = sizeof(extensionFunctions) / sizeof(FRENamedFunction);
@@ -62,9 +58,7 @@ extern "C" {
 	}
 	
 	
-	void contextFinalizer(FREContext ctx) {
-		return;
-	}
+	void contextFinalizer(FREContext ctx) { }
 	
 	void TRSAAExtInizer(void** extData, FREContextInitializer* ctxInitializer, FREContextFinalizer* ctxFinalizer) {
 		*ctxInitializer = &contextInitializer;
@@ -72,10 +66,8 @@ extern "C" {
 	}
 	
 	void TRSAAExtFinizer(void* extData) {
-		FREContext nullCTX;
-		nullCTX = 0;
+		FREContext nullCTX = nullptr;
 		contextFinalizer(nullCTX);
-		return;
 	}
 	
 }

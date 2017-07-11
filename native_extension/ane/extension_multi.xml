@@ -12,6 +12,13 @@
                 <finalizer>TRSAAExtFinizer</finalizer>
             </applicationDeployment>
         </platform>
+        <platform name="Windows-x86-64">
+            <applicationDeployment>
+                <nativeLibrary>SaveAsANE.dll</nativeLibrary>
+                <initializer>TRSAAExtInizer</initializer>
+                <finalizer>TRSAAExtFinizer</finalizer>
+            </applicationDeployment>
+        </platform>
         <platform name="MacOS-x86-64">
             <applicationDeployment>
                 <nativeLibrary>SaveAsANE.framework</nativeLibrary>
